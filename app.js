@@ -3,22 +3,24 @@
 //function to generate the random hex
 
 function getRandomHexColor(){
-    const hexLetters = "123456789ABCDEF";
-    let colors = "#";
 
-    for(let i=0; i < 6; i++){
-        colors += hexLetters[ Math.floor(math.random() * 16 ]
+    const hexLetter = "0123456789ABCDEF"
+    let color = "#"
+
+    for(let i = 0; i < 6; i++){
+        color += hexLetter[Math.floor(Math.random() * 16 )];
     }
-return colors
+return color;
 }
+  // Function to update the background color and text content
+ function updateHex(){
+    let bgColor = getRandomHexColor()
+    document.body.style.backgroundColor = bgColor;
+    document.getElementById("bg-text").textContent = `Background Color: ${bgColor}`;
+    
+    
+ }
   
-//   // Function to update the background color and text content
-//   function updateColor() {
-//     const bgColor = getRandomHexColor();
-//     document.body.style.backgroundColor = bgColor;
-//     document.getElementById('bg-text').textContent = `Background Color: ${bgColor}`;
-//   }
-  
-//   // Event listener for the button click
-//   document.getElementById('btn').addEventListener('click', updateColor);
+  // Event listener for the button click
+document.getElementById("btn").addEventListener("click", updateHex)
   
